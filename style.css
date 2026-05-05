@@ -1,11 +1,5 @@
-body {
-    display: block;
-    margin: 0px;
-
-}
-
 main {
-  height: 100vh;
+  height: 80vh;
   width: 100vw;
 
   font-family: monospace;
@@ -14,14 +8,10 @@ main {
 
   display: flex;
   flex-direction: column;
-  justify-content: center; /* centra verticalmente */
-  align-items: center; /* centra horizontalmente */
+  justify-content: center;
+  align-items: center;
 
   text-align: center;
-
-  background: #ffe0e0;
-  background: radial-gradient(circle, rgba(255, 224, 224, 1) 0%, rgba(231, 167, 250, 1) 30%, rgba(252, 88, 173, 1) 69%, rgba(255, 141, 10, 1) 100%);
-
 }
 
 h1 {
@@ -62,22 +52,124 @@ h1 {
   margin-inline-end: 200px;
 }
 
+/* -------------------- */
+/* ESTADOS GENERALES */
+/* -------------------- */
+
 .red {
   background-color: red;
 }
 
+/* -------------------- */
+/* HEADER */
+/* -------------------- */
+
+header {
+  height: auto;
+  display: flex;
+  justify-content: flex-end;
+  padding: 20px;
+  margin-right: 2vh;
+}
+
+#audioIcon {
+  width: 50px;
+  height: 50px;
+  cursor: pointer;
+}
+
+header img:hover {
+  transform: scale(1.1);
+}
+
+/* -------------------- */
+/* BOTÓN */
+/* -------------------- */
+
 button {
-  background-color: #f98525; /* naranja suave */
+  background-color: #f98525;
   border: none;
   padding: 1vh 2vw;
   font-size: 1rem;
   border-radius: 10px;
   font-family: monospace;
   cursor: pointer;
-  transition: background-color 0.3s ease;
+  transition: background-color 0.6s ease;
 }
 
 button:hover {
-  background-color: #f4259e; /* naranja fuerte */
+  background-color: #f4259e;
   cursor: url("./gift-cursor.png"), pointer;
+}
+
+/* cambio en modo party */
+body.party button {
+  background-color: #10cc74;
+}
+
+/* -------------------- */
+/* BODY + FONDOS ANIMADOS */
+/* -------------------- */
+
+body {
+  position: relative;
+  overflow: hidden;
+  margin: 0;
+  width: 100vw;
+  min-height: 100vh;
+
+  /* fondo base (rosa/naranja) */
+  background: radial-gradient(
+    circle,
+    rgba(255, 224, 224, 1) 0%,
+    rgba(231, 167, 250, 1) 30%,
+    rgba(252, 88, 173, 1) 69%,
+    rgba(255, 141, 10, 1) 100%
+  );
+}
+
+/* segundo fondo (azul/verde) */
+body::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+
+  background: radial-gradient(
+    circle,
+    rgba(252, 245, 245, 1) 0%,
+    rgba(179, 226, 255, 1) 30%,
+    rgba(16, 204, 116, 1) 69%,
+    rgba(25, 101, 252, 1) 100%
+  );
+
+  clip-path: circle(0% at 50% 50%);
+  transition: clip-path 1.2s ease-in-out;
+  z-index: -1;
+}
+
+/* activa transición circular desde el centro */
+body.party::before {
+  clip-path: circle(150% at 50% 50%);
+}
+
+/* -------------------- */
+/* ANIMACIONES TÍTULO */
+/* -------------------- */
+
+@keyframes crecerTitulo {
+  0% {
+    transform: scale(1);
+  }
+
+  50% {
+    transform: scale(1.4);
+  }
+
+  100% {
+    transform: scale(1);
+  }
+}
+
+.titulo-party {
+  animation: crecerTitulo 1s;
 }
