@@ -84,7 +84,7 @@ botonSorpresa.addEventListener("click", () => {
 
   // Confetti derecha
   confetti({
-    position: { x: 1700, y: 0.5 },
+    position: { x: 1500, y: 0.5 },
     count: 80,
     size: 1,
     velocity: 180,
