@@ -1,15 +1,83 @@
 body {
+    display: block;
+    margin: 0px;
+
+}
+
+main {
+  height: 100vh;
+  width: 100vw;
+
   font-family: monospace;
+  margin: 0;
+  min-height: 50vh;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center; /* centra verticalmente */
+  align-items: center; /* centra horizontalmente */
+
+  text-align: center;
+
+  background: #ffe0e0;
+  background: radial-gradient(circle, rgba(255, 224, 224, 1) 0%, rgba(231, 167, 250, 1) 30%, rgba(252, 88, 173, 1) 69%, rgba(255, 141, 10, 1) 100%);
+
+}
+
+h1 {
+  margin-bottom: 3vh;
+  font-size: 2rem;
+}
+
+#temporizador {
+  display: flex;
+  align-items: flex-end;
+  gap: 20px;
+}
+
+.bloque {
   display: flex;
   flex-direction: column;
   align-items: center;
 }
 
+.label {
+  font-size: 1.6rem;
+}
 
-.text-xxl {
+.bloque span {
   font-size: 100px;
+}
+
+.separador {
+  font-size: 80px;
+  margin-bottom: 10px;
+}
+
+#mensaje {
+  font-size: 1.4em;
+  display: flex;
+  flex-direction: row;
+  margin-inline-start: 200px;
+  margin-inline-end: 200px;
 }
 
 .red {
   background-color: red;
+}
+
+button {
+  background-color: #f98525; /* naranja suave */
+  border: none;
+  padding: 1vh 2vw;
+  font-size: 1rem;
+  border-radius: 10px;
+  font-family: monospace;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+button:hover {
+  background-color: #f4259e; /* naranja fuerte */
+  cursor: url("./gift-cursor.png"), pointer;
 }

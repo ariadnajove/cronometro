@@ -1,18 +1,64 @@
 <!doctype html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
-    <link rel="stylesheet" href="style.css" />
-    <script src="https://cdn.jsdelivr.net/npm/@hiseb/confetti@2.1.0/dist/confetti.min.js"></script>
-    <script src="index.js" defer></script>
-  </head>
-  <body>
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Cuenta atrás</title>
+  <link rel="stylesheet" href="style.css" />
+  <script src="https://cdn.jsdelivr.net/npm/@hiseb/confetti@2.1.0/dist/confetti.min.js"></script>
+  <script src="index.js" defer></script>
+</head>
+
+<body>
+  <header>
+
+  </header>
+
+  <main>
+
     <h1>Arichu's Birthday cuenta atrás</h1>
 
-    <div id="temporizador" class="text-xxl">
-      <span id="d">00</span><span>:</span><span id="h">00</span>:<span id="m">00</span><span>:</span><span id="s">00</span>
+    <div id="temporizador">
+      <div class="bloque">
+        <div class="label">Días</div>
+        <span id="d">00</span>
+      </div>
+
+      <span class="separador">:</span>
+
+      <div class="bloque">
+        <div class="label">Horas</div>
+        <span id="h">00</span>
+      </div>
+
+      <span class="separador">:</span>
+
+      <div class="bloque">
+        <div class="label">Minutos</div>
+        <span id="m">00</span>
+      </div>
+
+      <span class="separador">:</span>
+
+      <div class="bloque">
+        <div class="label">Segundos</div>
+        <span id="s">00</span>
+      </div>
+
+
     </div>
-  </body>
+    <div id="mensaje">
+      <p>Esta pequeña web es un proyecto creado para contar los días, horas, minutos y segundos que faltan para mi
+        cumpleaños, el próximo 3 de junio.
+        La idea es hacer la espera un poco más divertida viendo cómo avanza la cuenta atrás en tiempo real.
+        Además, puedes pulsar el botón de abajo para lanzar confeti y darle un toque de celebración antes de que llegue
+        el
+        gran día.</p>
+    </div>
+
+    <button id="confetti-button">¡SORPRESA!</button>
+  </main>
+</body>
+
 </html>
